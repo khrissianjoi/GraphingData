@@ -22,23 +22,30 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Gender In Academia</a>
+            <a class="navbar-brand" href="#">Random Data Graphs</a>
           </div>
       </div>
     </nav>
 
     <main>
-      <section class="section">
+
+    <section class="section">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-sm-12 text-center">
-              <p class="section-paragraph">Amount spent in stores per state</p>
+              <div class="col-xs-12 col-sm-4 text-center" id="per-state">
+              <p>Amount spent in stores per state</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center" id="per-person">
+              <p class="section-paragraph">Amount spent in stores per person</p>
+              </div>
             </div>
-            <div id="senti"></div>
+            <div id="per-state"></div>
           </div>
         </div>
-      </section>
+    </section>
+
     </main>
+    
     <script type="text/javascript" src="data/transactionData.js"></script>
     <script type="text/javascript" src="static/graphs.js"></script>
 </body>
