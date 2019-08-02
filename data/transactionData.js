@@ -1,4 +1,4 @@
-[
+var transactionData = [
     {"name": "Tom", "store": "Acme", "state": "NY", "spend": 100},
     {"name": "Tom", "store": "Big Co.", "state": "NY", "spend": 200},
     {"name": "Bob", "store": "Acme", "state": "FL", "spend": 150},

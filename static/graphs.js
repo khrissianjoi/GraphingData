@@ -1,24 +1,4 @@
-var transactionData = [
-    {"name": "Tom", "store": "Acme", "state": "NY", "spend": 100},
-    {"name": "Tom", "store": "Big Co.", "state": "NY", "spend": 200},
-    {"name": "Bob", "store": "Acme", "state": "FL", "spend": 150},
-    {"name": "Bob", "store": "Acme", "state": "NY", "spend": 200},
-    {"name": "Bob", "store": "Big Co.", "state": "FL", "spend": 50},
-    {"name": "Bob", "store": "Big Co.", "state": "NY", "spend": 75},
-    {"name": "Alice", "store": "Acme", "state": "FL", "spend": 200},
-    {"name": "Alice", "store": "Big Co.", "state": "NY", "spend": 350},
-    {"name": "Tom", "store": "Acme", "state": "NY", "spend": 100},
-    {"name": "Tom", "store": "Big Co.", "state": "PH", "spend": 200},
-    {"name": "Bob", "store": "Acme", "state": "PH", "spend": 150},
-    {"name": "Bob", "store": "Acme", "state": "LA", "spend": 200},
-    {"name": "Bob", "store": "Big Co.", "state": "LA", "spend": 50},
-    {"name": "Bob", "store": "Big Co.", "state": "WS", "spend": 75},
-    {"name": "Alice", "store": "Acme", "state": "WS", "spend": 200},
-    {"name": "Alice", "store": "Big Co.", "state": "WS", "spend": 350},
-];
-
 createGraphs(transactionData);
-
 function createGraphs(dataSet) {
     var ndx = crossfilter(dataSet);
     show_total_spend_per_state(ndx);
