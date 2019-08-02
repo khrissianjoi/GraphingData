@@ -32,15 +32,44 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-12 text-center">
-              <p class="section-paragraph">There is a very loose correlation between salary and years since receiving a PhD.</p>
+              <p class="section-paragraph">Test data</p>
             </div>
 
-            <div class="col-xs-12 col-sm-12 text-center" id="phd-salary"></div>
+            <div id="senti"></div>
           </div>
         </div>
       </section>
+
+      <script>
+        var transactionsData = [
+        {"name": "Tom", "store": "Acme", "state": "NY", "spend": 100},
+        {"name": "Tom", "store": "Big Co.", "state": "NY", "spend": 200},
+        {"name": "Bob", "store": "Acme", "state": "FL", "spend": 150},
+        {"name": "Bob", "store": "Acme", "state": "NY", "spend": 200},
+        {"name": "Bob", "store": "Big Co.", "state": "FL", "spend": 50},
+        {"name": "Bob", "store": "Big Co.", "state": "NY", "spend": 75},
+        {"name": "Alice", "store": "Acme", "state": "FL", "spend": 200},
+        {"name": "Alice", "store": "Big Co.", "state": "NY", "spend": 350},
+    ];
+        var ndx = crossfilter(transactionsData);
+        var name_dim = ndx.dimension(dc.pluck('name'));
+        var total_spend_per_person = name_dim.group().reduceSum(dc.pluck("spend"));
+
+        dc.barChart("#senti")
+            .width(350)
+            .height(250)
+            .margins({top: 10, right: 50, bottom: 30, left: 50})
+            .dimension(name_dim)
+            .group(total_spend_per_person)
+            .transitionDuration(500)
+            .x(d3.scale.ordinal())
+            .xUnits(dc.units.ordinal)
+            .xAxisLabel("Store")
+            .yAxisLabel("Spent")
+            .yAxis().ticks(4);
+        dc.renderAll()
+      </script>
     </main>
-    <script type="text/javascript" src="static/graphs.js"></script>
   </body>
 
 </html>
