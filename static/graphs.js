@@ -31,6 +31,7 @@ function show_total_spend_per_person(ndx) {
     dc.lineChart("#per-person")
         .width(350)
         .height(250)
+        .margins({top: 10, right: 50, bottom: 30, left: 50})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .brushOn(false)
@@ -46,6 +47,7 @@ function show_total_earnings_per_store(ndx) {
     dc.rowChart("#per-store")
         .width(350)
         .height(250)
+        .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(storeDim)
         .group(totalEarningsPerPerson);
 }
