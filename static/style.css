@@ -46,3 +46,7 @@
 .section-paragraph {
 	line-height: 1.2;
 }
+
+.graphoutline {
+	border: 1px solid red;
+}
