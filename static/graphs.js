@@ -21,7 +21,7 @@ function showGirlNamesRanking(ndx) {
     var nameDim = ndx.dimension(dc.pluck("name"));
     var countPerName = nameDim.group().reduceSum(dc.pluck("count"));
     dc.rowChart("#girls-name")
-        .width(450)
+        .width(950)
         .height(1500)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(nameDim)
@@ -33,8 +33,8 @@ function show_total_spend_per_state(ndx) {
     var totalSpendPerState = stateDim.group().reduceSum(dc.pluck("spend"));
 
     dc.barChart("#per-state")
-        .width(350)
-        .height(250)
+        .width(450)
+        .height(150)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(stateDim)
         .group(totalSpendPerState)
