@@ -21,8 +21,8 @@ function showGirlNamesRanking(ndx) {
     var nameDim = ndx.dimension(dc.pluck("name"));
     var countPerName = nameDim.group().reduceSum(dc.pluck("count"));
     dc.rowChart("#girls-name")
-        .width(950)
-        .height(1500)
+        .width(500)
+        .height(500)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(nameDim)
         .group(countPerName);
